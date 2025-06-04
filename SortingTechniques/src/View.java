@@ -16,11 +16,19 @@ public class View extends JFrame {
 
     sortbtn = new JButton("Sort");
 
+    Bsort = new JLabel("Bubble Sort Time:");
+    Insort = new JLabel("Insort Time");
+    Selectsort = new JLabel("Selectsort Time");
 
-
+    add(sortbtn);
+    add(Bsort);
+    add(Insort);
+    add(Selectsort);
     
 
 
+
+    
 
 
 
