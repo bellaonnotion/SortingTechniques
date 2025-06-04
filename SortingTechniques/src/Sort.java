@@ -70,6 +70,7 @@ public class Sort{
     public int[] bubbleSort(){
         int[] arrayBubble = originalArray.clone(); //create copy of original array
         int n = arrayBubble.length; //varaible for length of array
+        long nanoStart = System.nanoTime();
 
         //Outer loop for the number of passes
         for (int i=0; i<(n-1); i++){ 
@@ -87,6 +88,8 @@ public class Sort{
             }
         }
 
+        long nanoEnd = System.nanoTime();
+        sortTime = (nanoEnd - nanoStart);
         return arrayBubble; //return the sorted array
 
     }
@@ -99,6 +102,7 @@ public class Sort{
     public int[] insertionSort(){
         int[] arrayInsertion = originalArray.clone(); //clone original array for array Insertion
         int n = arrayInsertion.length; //varaible for array length
+        long nanoStart = System.nanoTime();
 
         //start with second element of the array
         for (int i = 1; i<n; ++i){
@@ -113,8 +117,11 @@ public class Sort{
 
             arrayInsertion[j+1] = key; //insert the key to correct position in the sorted part of the array
         }
+        
+        long nanoEnd = System.nanoTime();
+        sortTime = (nanoEnd - nanoStart);
         return arrayInsertion; //return sorted array
-
+        
     }
 
     /**
