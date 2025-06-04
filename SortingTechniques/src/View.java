@@ -25,8 +25,8 @@ public class View extends JFrame {
     sortbtn = new JButton("Sort");
 
     Bsort = new JLabel("Bubble Sort Time:");
-    Insort = new JLabel("Insort Time");
-    Selectsort = new JLabel("Selectsort Time");
+    Insort = new JLabel("Insertion Sort Time");
+    Selectsort = new JLabel("Selection Sort Time");
 
     panel1.add(sortbtn);
     panel2.add(Bsort);
