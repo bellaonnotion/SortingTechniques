@@ -18,6 +18,7 @@ public class View extends JFrame {
     panel1 = new JPanel();
     panel1.setPreferredSize(new Dimension(400,50));
     panel2 =new JPanel();
+    panel2.setPreferredSize(new Dimension(400,250));
 
     add(panel1);
     add(panel2);
