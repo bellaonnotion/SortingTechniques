@@ -1,7 +1,7 @@
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
+import java.awt.*; //import java.awt
+import javax.swing.*;
+
+
 
 public class View extends JFrame {
 
@@ -12,7 +12,15 @@ public class View extends JFrame {
     public View(){
     setDefaultCloseOperation(EXIT_ON_CLOSE);
     setTitle("Sorting Algorithm Timer");
-    setSize(500,500);
+    setSize(400,300);
+    setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS)); // Stack panels vertically
+    
+    panel1 = new JPanel();
+    panel1.setPreferredSize(new Dimension(400,50));
+    panel2 =new JPanel();
+
+    add(panel1);
+    add(panel2);
 
     sortbtn = new JButton("Sort");
 
@@ -20,18 +28,13 @@ public class View extends JFrame {
     Insort = new JLabel("Insort Time");
     Selectsort = new JLabel("Selectsort Time");
 
-    add(sortbtn);
-    add(Bsort);
-    add(Insort);
-    add(Selectsort);
+    panel1.add(sortbtn);
+    panel2.add(Bsort);
+    panel2.add(Insort);
+    panel2.add(Selectsort);
+
+    panel2.setLayout(new GridLayout(3,2));
     
-
-
-
-    
-
-
-
 
     setVisible(true);
 
