@@ -3,13 +3,13 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class View extends JFrame {
+public class ViewApp extends JFrame {
 
     JLabel Bsort, Insort, Selectsort;
     JPanel panel1,panel2,panel3;
     JButton sortbtn;
 
-    public View(){
+    public ViewApp(){
     setDefaultCloseOperation(EXIT_ON_CLOSE);
     setTitle("Sorting Algorithm Timer");
     setSize(500,500);
