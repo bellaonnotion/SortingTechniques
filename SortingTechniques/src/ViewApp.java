@@ -7,6 +7,7 @@ public class ViewApp extends JFrame {
 
     JLabel Bsort, Insort, Selectsort;
     JPanel panel1,panel2,panel3;
+    JTextField BsortTime, InsortTime, SelectsortTime;
     JButton sortbtn;
 
     public ViewApp(){
