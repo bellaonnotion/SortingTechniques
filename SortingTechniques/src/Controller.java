@@ -1,5 +1,9 @@
 import java.util.Arrays;
 
+/**
+ * class for controller
+ * connects view and sort class
+ */
 public class Controller {
     private ViewApp view;
     private Sort sortInstance;
@@ -7,8 +11,8 @@ public class Controller {
     public Controller(ViewApp view) {
         this.view = view;
         this.sortInstance = new Sort(); // Initialize the Sort model
-        addEventListeners();
-        printall();
+        addEventListeners(); //add event listeners
+        printall(); //print 1000 numbers
     
 
     }
