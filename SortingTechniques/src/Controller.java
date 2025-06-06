@@ -35,28 +35,31 @@ public class Controller {
      * print first 10 numbers that are sorted
      */
     public static void print10num(int[] array){
-        for(int i =0; i<10 && i<array.length; i++){
+        for(int i =0; i<500 && i<array.length; i++){
             System.out.println(array[i]+"");
         }
+    
     }
 
-    public static void printall(){
-        Sort sorter = new Sort();
-        int[] selectionS = sorter.selectionSort();
+
+    public void printall(){
+        
+        int[] selectionS = sortInstance.selectionSort();
         System.out.println("Selection Sort first 10:");
         print10num(selectionS);
-        
 
-        int[] bubbleS = sorter.bubbleSort();
+       int[] bubbleS = sortInstance.bubbleSort();
         System.out.println("Bubble Sort first 10:");
         print10num(bubbleS);
 
-        int[] insertionS = sorter.insertionSort();
+        int[] insertionS = sortInstance.insertionSort();
         System.out.println("Insertion Sort first 10:");
         print10num(insertionS);
+        
 
 
     }
+    
 
     
 }
