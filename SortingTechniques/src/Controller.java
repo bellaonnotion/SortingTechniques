@@ -36,7 +36,7 @@ public class Controller {
 
         // Update the view with the sorting times
         view.updateSortingTimes(bubbleSortTime, insertionSortTime, selectionSortTime);
-        printall(); //print 1000 numbers
+        printall(); //print first 400 sorted numbers 
     }
 
     /**

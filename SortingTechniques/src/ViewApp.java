@@ -18,7 +18,7 @@ public class ViewApp extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE); // Close the application when the window is closed
         
         setTitle("Sorting Algorithm Timer");//title of the frame
-        setSize(450, 500);
+        setSize(450, 600);
         setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS)); // Stack panels vertically
 
         //initalize the panels and set size
@@ -37,7 +37,7 @@ public class ViewApp extends JFrame {
          */
         txtSortNum = new JTextArea();
         txtSortNum.setEditable(false);
-        sortedNum = new JLabel("Sored Numbers (First 1000)");
+        sortedNum = new JLabel("Sorted Numbers (First 400)");
         panel3.add(sortedNum, BorderLayout. NORTH);
         panel3.add(txtSortNum,BorderLayout.CENTER);
     
