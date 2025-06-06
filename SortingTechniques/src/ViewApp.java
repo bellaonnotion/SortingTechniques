@@ -2,46 +2,63 @@ import java.awt.*; //import java.awt
 import javax.swing.*;
 
 
-
 public class ViewApp extends JFrame {
 
     JLabel Bsort, Insort, Selectsort;
-    JPanel panel1,panel2,panel3;
+    JPanel panel1, panel2;
     JTextField BsortTime, InsortTime, SelectsortTime;
     JButton sortbtn;
 
-    public ViewApp(){
-    setDefaultCloseOperation(EXIT_ON_CLOSE);
-    setTitle("Sorting Algorithm Timer");
-    setSize(400,300);
-    setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS)); // Stack panels vertically
-    
-    panel1 = new JPanel();
-    panel1.setPreferredSize(new Dimension(400,50));
-    panel2 =new JPanel();
-    panel2.setPreferredSize(new Dimension(400,250));
+    public ViewApp() {
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setTitle("Sorting Algorithm Timer");
+        setSize(400, 300);
+        setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS)); // Stack panels vertically
 
-    add(panel1);
-    add(panel2);
+        panel1 = new JPanel();
+        panel1.setPreferredSize(new Dimension(400, 50));
+        panel2 = new JPanel();
+        panel2.setPreferredSize(new Dimension(400, 250));
 
-    sortbtn = new JButton("Sort");
+        add(panel1);
+        add(panel2);
 
-    Bsort = new JLabel("Bubble Sort Time:");
-    Insort = new JLabel("Insertion Sort Time");
-    Selectsort = new JLabel("Selection Sort Time");
+        sortbtn = new JButton("Sort");
 
-    panel1.add(sortbtn);
-    panel2.add(Bsort);
-    panel2.add(Insort);
-    panel2.add(Selectsort);
+        Bsort = new JLabel("Bubble Sort Time:");
+        Insort = new JLabel("Insertion Sort Time:");
+        Selectsort = new JLabel("Selection Sort Time:");
 
-    panel2.setLayout(new GridLayout(3,2));
-    
+        BsortTime = new JTextField(20);
+        InsortTime = new JTextField(20);
+        SelectsortTime = new JTextField(20);
 
-    setVisible(true);
+        panel1.add(sortbtn);
 
+        panel2.add(Bsort);
+        panel2.add(BsortTime);
+        BsortTime.setEditable(false); // Make the text field non-editable
+        panel2.add(Insort);
+        panel2.add(InsortTime);
+        InsortTime.setEditable(false); // Make the text field non-editable
+        panel2.add(Selectsort);
+        panel2.add(SelectsortTime);
+        SelectsortTime.setEditable(false); // Make the text field non-editable
+
+        panel2.setLayout(new GridLayout(3, 2));
+
+        setVisible(true);
     }
 
+    // Expose the sort button to the controller
+    public JButton getSortButton() {
+        return sortbtn;
+    }
 
-    
+    // Method to update sorting times in the text fields
+    public void updateSortingTimes(long bubbleSortTime, long insertionSortTime, long selectionSortTime) {
+        BsortTime.setText(bubbleSortTime + " ns or " + String.format("%.3f", bubbleSortTime / 1_000_000_000.0) + " s");
+        InsortTime.setText(insertionSortTime + " ns or " + String.format("%.3f", insertionSortTime / 1_000_000_000.0) + " s");
+        SelectsortTime.setText(selectionSortTime + " ns or " + String.format("%.3f", selectionSortTime / 1_000_000_000.0) + " s");
+    }
 }

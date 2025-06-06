@@ -8,12 +8,11 @@ public class Sort{
     public Sort(){ //initalize
 
         Random random = new Random();
-        int [] originalArray = new int[50000];
+        originalArray = new int[50000];
 
-        for (int i =0; i<50000; i++){
+        for (int i = 0; i<50000; i++){
             originalArray[i] = random.nextInt(401) - 200; //generates number from -200 to 200
         }
-
     }
 
 
