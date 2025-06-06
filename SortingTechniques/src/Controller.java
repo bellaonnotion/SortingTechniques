@@ -39,14 +39,15 @@ public class Controller {
     public static void printnum(int[] array){
         for(int i =0; i<1000 && i<array.length; i++){
             System.out.println(array[i]+"");
-
-            if((i+1)%50==0){
-            System.out.println();
         }
-        }
+        
         
     }
 
+    /**
+     * print the first 1000 in the selection sorted array 
+     * testing if the code works 
+     */
     public static void printall(){
         Sort sorter = new Sort();
         int[] selectionS = sorter.selectionSort();
