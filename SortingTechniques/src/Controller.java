@@ -1,4 +1,4 @@
-import java.util.Arrays;
+
 
 /**
  * class for controller
@@ -12,7 +12,7 @@ public class Controller {
         this.view = view;
         this.sortInstance = new Sort(); // Initialize the Sort model
         addEventListeners(); //add event listeners
-        printall(); //print 1000 numbers
+        
     
 
     }
@@ -36,30 +36,44 @@ public class Controller {
 
         // Update the view with the sorting times
         view.updateSortingTimes(bubbleSortTime, insertionSortTime, selectionSortTime);
-    }
-
-    /** print first 1000 numbers that are sorted
-     */
-    public static void printnum(int[] array){
-        for(int i =0; i<1000 && i<array.length; i++){
-            System.out.println(array[i]+"");
-        }
-        
-        
+        printall(); //print 1000 numbers
     }
 
     /**
-     * print the first 1000 in the selection sorted array 
+    * Returns a string containing the first 400 numbers from the array
+    * @param array the array of integers to print
+    * @return a single string of up to 400 numbers from the array
+    */
+    public String printnum(int[] array) {
+    StringBuilder sb = new StringBuilder(); // Builds output string 
+    //goes through 400 sorted number in array
+    for (int i = 0; i < 400 && i < array.length; i++) {
+        sb.append(array[i]).append(" "); // Add new number to string with a space at end
+         
+        if((i+1)%15==0){ //every 15 integer create a new line
+            sb.append("\n");
+         }
+    }
+        return sb.toString().trim(); // trim to remove trailing space
+    }
+
+    /**
+     * print the first 400 in the selection sorted array 
      * testing if the code works 
      */
-    public static void printall(){
-        Sort sorter = new Sort();
-        int[] selectionS = sorter.selectionSort();
-        System.out.println("Selection Sort first 1000:");
-        printnum(selectionS);
+    public void printall(){
+        
+        int[] selectionS = sortInstance.selectionSort();
+        System.out.println("Selection Sort first 400:");
+        String output = printnum(selectionS);
+
+        view.txtSortNum.setText(output);
+
 
 
     }
+
+
         
 
 

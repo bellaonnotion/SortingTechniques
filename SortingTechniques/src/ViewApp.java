@@ -8,16 +8,17 @@ import javax.swing.*;
 public class ViewApp extends JFrame {
 
     // Declare UI components
-    JLabel Bsort, Insort, Selectsort;
+    JLabel Bsort, Insort, Selectsort, sortedNum;
     JPanel panel1, panel2, panel3;
     JTextField BsortTime, InsortTime, SelectsortTime;
+    JTextArea txtSortNum;
     JButton sortbtn;
 
     public ViewApp() {
         setDefaultCloseOperation(EXIT_ON_CLOSE); // Close the application when the window is closed
         
         setTitle("Sorting Algorithm Timer");//title of the frame
-        setSize(450, 300);
+        setSize(450, 500);
         setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS)); // Stack panels vertically
 
         //initalize the panels and set size
@@ -26,9 +27,25 @@ public class ViewApp extends JFrame {
         panel2 = new JPanel();
         panel2.setPreferredSize(new Dimension(450, 200));
 
+        panel3 = new JPanel();
+        panel3.setPreferredSize(new Dimension(450, 100));
+        panel3.setLayout(new BorderLayout());
+
+        /**
+         * create text area 
+         * create label for panel 3
+         */
+        txtSortNum = new JTextArea();
+        txtSortNum.setEditable(false);
+        sortedNum = new JLabel("Sored Numbers (First 1000)");
+        panel3.add(sortedNum, BorderLayout. NORTH);
+        panel3.add(txtSortNum,BorderLayout.CENTER);
+    
+
         //add panels to frame
         add(panel1);
         add(panel2);
+        add(panel3);
      
         
         //create button

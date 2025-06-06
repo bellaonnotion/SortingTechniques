@@ -9,9 +9,9 @@ public class Sort{
     public Sort(){ //initalize the sort class with a random array of integers
 
         Random random = new Random();
-        originalArray = new int[50000];
+        originalArray = new int[400];
 
-        for (int i = 0; i<50000; i++){
+        for (int i = 0; i<400; i++){
             originalArray[i] = random.nextInt(401) - 200; //generates number from -200 to 200
         }
 
