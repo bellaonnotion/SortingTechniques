@@ -1,14 +1,10 @@
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+
 import java.util.Random;
 
 public class Sort{
 
     private int[] originalArray;
-    private double sortTime;
+    private double sortTime; //for the amount of time it takes to sort numbers
 
     public Sort(){ //initalize the sort class with a random array of integers
 
@@ -28,9 +24,9 @@ public class Sort{
      */
     public int[] selectionSort() {
 
-        int[] arraySelection = originalArray.clone();
-        int n = arraySelection.length;
-        long nanoStart = System.nanoTime();
+        int[] arraySelection = originalArray.clone(); //clone the orignal array
+        int n = arraySelection.length; //get length of array
+        long nanoStart = System.nanoTime(); //set up time for start of sorting
 
         /**
          * for loop for the number of passes
@@ -61,9 +57,9 @@ public class Sort{
             
         }
 
-        long nanoEnd = System.nanoTime();
-        sortTime = (nanoEnd - nanoStart);
-        return arraySelection;
+        long nanoEnd = System.nanoTime(); //time for the end of sorting
+        sortTime = (nanoEnd - nanoStart); //find the total time it takes to sort 
+        return arraySelection; //return array
 
         
 
