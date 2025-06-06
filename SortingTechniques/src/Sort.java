@@ -13,6 +13,7 @@ public class Sort{
         for (int i = 0; i<50000; i++){
             originalArray[i] = random.nextInt(401) - 200; //generates number from -200 to 200
         }
+
     }
 
 
@@ -23,9 +24,7 @@ public class Sort{
     public int[] selectionSort() {
 
         int[] arraySelection = originalArray.clone();
-
         int n = arraySelection.length;
-
         long nanoStart = System.nanoTime();
 
         /**
@@ -53,11 +52,15 @@ public class Sort{
             int temp = arraySelection[i];
             arraySelection[i] = arraySelection[idxmin];
             arraySelection[idxmin] = temp;
+
+            
         }
 
         long nanoEnd = System.nanoTime();
         sortTime = (nanoEnd - nanoStart);
         return arraySelection;
+
+        
 
     }
 
@@ -103,6 +106,7 @@ public class Sort{
         int n = arrayInsertion.length; //varaible for array length
         long nanoStart = System.nanoTime();
 
+    
         //start with second element of the array
         for (int i = 1; i<n; ++i){
             int key = arrayInsertion[i]; //assign current element position as key
@@ -131,6 +135,7 @@ public class Sort{
         return sortTime;
     }
 
-   //message for testing purposes
+    
+   
 }
 

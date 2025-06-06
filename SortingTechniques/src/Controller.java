@@ -6,6 +6,8 @@ public class Controller {
         this.view = view;
         this.sortInstance = new Sort(); // Initialize the Sort model
         addEventListeners();
+        printall();
+
     }
 
     private void addEventListeners() {
@@ -28,4 +30,33 @@ public class Controller {
         // Update the view with the sorting times
         view.updateSortingTimes(bubbleSortTime, insertionSortTime, selectionSortTime);
     }
+
+    /**
+     * print first 10 numbers that are sorted
+     */
+    public static void print10num(int[] array){
+        for(int i =0; i<10 && i<array.length; i++){
+            System.out.println(array[i]+"");
+        }
+    }
+
+    public static void printall(){
+        Sort sorter = new Sort();
+        int[] selectionS = sorter.selectionSort();
+        System.out.println("Selection Sort first 10:");
+        print10num(selectionS);
+        
+
+        int[] bubbleS = sorter.bubbleSort();
+        System.out.println("Bubble Sort first 10:");
+        print10num(bubbleS);
+
+        int[] insertionS = sorter.insertionSort();
+        System.out.println("Insertion Sort first 10:");
+        print10num(insertionS);
+
+
+    }
+
+    
 }
