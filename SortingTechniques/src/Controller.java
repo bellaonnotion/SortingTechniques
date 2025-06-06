@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Controller {
     private ViewApp view;
     private Sort sortInstance;
@@ -7,6 +9,7 @@ public class Controller {
         this.sortInstance = new Sort(); // Initialize the Sort model
         addEventListeners();
         printall();
+    
 
     }
 
@@ -31,35 +34,31 @@ public class Controller {
         view.updateSortingTimes(bubbleSortTime, insertionSortTime, selectionSortTime);
     }
 
-    /**
-     * print first 10 numbers that are sorted
+    /** print first 1000 numbers that are sorted
      */
-    public static void print10num(int[] array){
-        for(int i =0; i<500 && i<array.length; i++){
+    public static void printnum(int[] array){
+        for(int i =0; i<1000 && i<array.length; i++){
             System.out.println(array[i]+"");
+
+            if((i+1)%50==0){
+            System.out.println();
         }
-    
+        }
+        
     }
 
-
-    public void printall(){
-        
-        int[] selectionS = sortInstance.selectionSort();
-        System.out.println("Selection Sort first 10:");
-        print10num(selectionS);
-
-       int[] bubbleS = sortInstance.bubbleSort();
-        System.out.println("Bubble Sort first 10:");
-        print10num(bubbleS);
-
-        int[] insertionS = sortInstance.insertionSort();
-        System.out.println("Insertion Sort first 10:");
-        print10num(insertionS);
-        
+    public static void printall(){
+        Sort sorter = new Sort();
+        int[] selectionS = sorter.selectionSort();
+        System.out.println("Selection Sort first 1000:");
+        printnum(selectionS);
 
 
     }
-    
+        
 
-    
+
+
+
+
 }
