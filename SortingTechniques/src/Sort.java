@@ -5,7 +5,7 @@ public class Sort{
     private int[] originalArray;
     private double sortTime;
 
-    public Sort(){ //initalize
+    public Sort(){ //initalize the sort class with a random array of integers
 
         Random random = new Random();
         originalArray = new int[50000];

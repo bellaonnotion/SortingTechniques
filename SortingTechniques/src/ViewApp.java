@@ -4,15 +4,17 @@ import javax.swing.*;
 
 public class ViewApp extends JFrame {
 
+    // Declare UI components
     JLabel Bsort, Insort, Selectsort;
     JPanel panel1, panel2;
     JTextField BsortTime, InsortTime, SelectsortTime;
     JButton sortbtn;
 
     public ViewApp() {
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(EXIT_ON_CLOSE); // Close the application when the window is closed
+        setResizable(false); // Prevent resizing of the window
         setTitle("Sorting Algorithm Timer");
-        setSize(400, 300);
+        setSize(450, 200);
         setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS)); // Stack panels vertically
 
         panel1 = new JPanel();
