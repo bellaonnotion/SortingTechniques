@@ -2,7 +2,7 @@ import java.awt.*; //import java.awt
 import javax.swing.*;
 
 /**
- * View/ visul of the converter
+ * View/ visual of the converter
  */
 
 public class ViewApp extends JFrame {
